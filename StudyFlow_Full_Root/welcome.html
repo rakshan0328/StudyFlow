@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyFlow - Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="darkModeToggle" class="dark-toggle">🌓</button>
+  <img src="logo.png" alt="StudyFlow Logo" class="logo" />
+
+  <div class="nav">
+    <button onclick="showTab('home')">🏠 Welcome</button>
+    <button onclick="showTab('calculator')">🧮 Calculator</button>
+    <button onclick="showTab('gpa')">🎓 GPA Calculator</button>
+    <button onclick="showTab('planner')">📅 Study Planner</button>
+    <button onclick="showTab('ai')">📖 AI Assistant</button>
+    <button onclick="showTab('productivity')">📊 Productivity</button>
+  </div>
+
+  <div class="content" id="home">
+    <h2>🎉 Welcome to StudyFlow!</h2>
+    <p>Select a tool above to get started.</p>
+  </div>
+
+  <div class="content hidden" id="calculator">
+    <h3>🧮 Calculator</h3>
+    <input type="text" id="calc-input" placeholder="e.g. 2+2" />
+    <button class="auth-btn" onclick="basicCalculate()">Calculate</button>
+    <input type="text" id="calc-display" readonly />
+  </div>
+
+  <div class="content hidden" id="gpa">
+    <h3>🎓 GPA Calculator</h3>
+    <input type="text" id="grades" placeholder="e.g. 90,85,78" />
+    <button class="auth-btn" onclick="calculateGPA()">Calculate GPA</button>
+    <p id="gpa-result"></p>
+  </div>
+
+  <div class="content hidden" id="planner">
+    <h3>📅 Study Planner</h3>
+    <input id="assignmentName" placeholder="Assignment Name" />
+    <input type="datetime-local" id="dueDate" />
+    <select id="priority">
+      <option value="High">High Priority</option>
+      <option value="Medium">Medium Priority</option>
+      <option value="Low">Low Priority</option>
+    </select>
+    <input id="studyTime" placeholder="Study Time (minutes)" />
+    <button class="auth-btn" onclick="addAssignment()">Add Assignment</button>
+    <h4>📌 My Assignments</h4>
+    <ul id="assignmentList"></ul>
+  </div>
+
+  <div class="content hidden" id="ai">
+    <h3>📖 AI Study Assistant</h3>
+    <input id="aiInput" placeholder="Describe your assignment" />
+    <button class="auth-btn" onclick="handleAIRequest()">Generate Plan</button>
+    <div class="ai-box" id="aiResponse"></div>
+  </div>
+
+  <div class="content hidden" id="productivity">
+    <h3>📊 Productivity Tracker</h3>
+    <p>Total Study Minutes by You:</p>
+    <strong>⏱ <span id="studyMinutes">0</span> minutes</strong>
+  </div>
+
+  <div id="notification"></div>
+  <div id="adminMessageBar"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StudyFlow - Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="darkModeToggle" class="dark-toggle">🌓</button>
+  <img src="logo.png" class="logo" alt="StudyFlow Logo" />
+
+  <div class="auth-box">
+    <!-- Login Form -->
+    <div class="form" id="loginForm">
+      <h2>🔐 Login</h2>
+      <input type="text" id="loginUser" placeholder="Username" />
+      <input type="password" id="loginPass" placeholder="Password" />
+      <button class="auth-btn" id="loginBtn">Login</button>
+      <p class="toggle-text">Don’t have an account? <a onclick="toggleAuth('register')">Register</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div class="form hidden" id="registerForm">
+      <h2>📝 Register</h2>
+      <input type="text" id="registerUser" placeholder="New Username" />
+      <input type="password" id="registerPass" placeholder="New Password" />
+      <button class="auth-btn" id="registerBtn">Register</button>
+      <p class="toggle-text">Already have an account? <a onclick="toggleAuth('login')">Login</a></p>
+    </div>
+  </div>
+
+  <div id="notification"></div>
+  <script src="script.js"></script>
+</body>
+</html>
