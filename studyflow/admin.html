@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StudyFlow Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="darkModeToggle" class="dark-toggle">🌓</button>
+  <h2>👑 Admin Panel</h2>
+
+  <div class="content active">
+    <h3>📢 Post Announcement</h3>
+    <input type="text" id="adminMessageInput" placeholder="Your message..." />
+    <button class="action" onclick="saveAdminMessage()">Save Message</button>
+    <hr />
+    <h3>📋 All Users</h3>
+    <ul id="userList"></ul>
+    <h3>Total Accounts: <span id="userCount">0</span></h3>
+    <button class="delete-btn" onclick="resetUsers()">🧹 Reset All Users</button>
+  </div>
+
+  <div id="notification"></div>
+  <script src="script.js"></script>
+</body>
+</html>
